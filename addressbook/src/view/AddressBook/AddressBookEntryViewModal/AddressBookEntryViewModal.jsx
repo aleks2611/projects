@@ -13,13 +13,13 @@ const initialState = {
   country: "",
   isDisabled: true,
 };
+
 function reducer(state, action) {
   switch (action.type) {
     case "changeValue":
       return { ...state, [action.field]: action.value };
     case "isDisabled":
       return { ...state, isDisabled: action.payload };
-
     case "setInitialValues":
       return { ...action.initialValues };
     default:
@@ -46,12 +46,16 @@ export function AddressBookEntryViewModal({ onSave }) {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+
+    setFormData({
+      type: "changeValue",
+      value: value,
+      field: name,
+    });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData);
   };
 
   function closeModal() {
