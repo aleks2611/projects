@@ -1,0 +1,14 @@
+
+.address-book--table--avatar {
+  width: 4rem;
+  height: 4rem;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 99;
+  border: 1px solid skyblue;
+  transform: translate(-50%, -50%);
+}
