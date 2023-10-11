@@ -14,6 +14,7 @@ function Navbar() {
           <div className={classes["login-navbar-links"]}>
             <>
               <Link to="/">Home</Link>
+              <Link to="/restorant">Restorant</Link>
               <Link to="/logout">Logout</Link>
             </>
           </div>
