@@ -6,6 +6,8 @@ import Navbar from "./pages/navigation/navbar/Navbar";
 import Logout from "./pages/navigation/Logout/Logout";
 import NotFound from "./pages/navigation/notfound/NotFound";
 import classes from "./App.module.css";
+import Restorant from "./pages/restorant/Restorant";
+import RestorantDetails from "./pages/restorant/restorantDetails/RestorantDetails";
 
 function App() {
   return (
@@ -13,16 +15,20 @@ function App() {
       <div className={classes["login"]}>
         <Navbar />
         <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Logout />} />
           <Route
-            path="/"
+            path="/restorant"
             element={
               <ProtectedRoute>
-                <Home />
+                <Routes>
+                  <Route index element={<Restorant />} />
+                  <Route path=":id" element={<RestorantDetails />} />
+                </Routes>
               </ProtectedRoute>
             }
           />
-          <Route path="/login" element={<Login />} />
-          <Route path="/logout" element={<Logout />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
