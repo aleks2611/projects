@@ -1,0 +1,20 @@
+.login-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 5rem;
+  background-color: #0000ff;
+}
+
+.login-navbar-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 2rem;
+}
